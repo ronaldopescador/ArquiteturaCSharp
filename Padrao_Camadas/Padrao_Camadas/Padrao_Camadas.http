@@ -1,6 +1,0 @@
-@Padrao_Camadas_HostAddress = http://localhost:5178
-
-GET {{Padrao_Camadas_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

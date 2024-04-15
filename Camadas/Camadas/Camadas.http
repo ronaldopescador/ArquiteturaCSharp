@@ -1,6 +1,0 @@
-@Camadas_HostAddress = http://localhost:5294
-
-GET {{Camadas_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

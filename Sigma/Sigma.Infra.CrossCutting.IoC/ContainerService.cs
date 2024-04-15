@@ -9,7 +9,8 @@ using Sigma.Service.Interfaces;
 using Sigma.Service.Services;
 
 namespace Sigma.Infra.CrossCutting.IoC
-{    
+{
+    
     public static class ContainerService
     {
         public static IServiceCollection AddApplicationServicesCollentions(this IServiceCollection services)
@@ -35,6 +36,8 @@ namespace Sigma.Infra.CrossCutting.IoC
         {
             services.AddDbContext<SigmaContext>(options => options.UseNpgsql(queryString, b => b.MigrationsAssembly("Sigma")));
             return services;
-        }        
+        }
+
+        
     }
 }
