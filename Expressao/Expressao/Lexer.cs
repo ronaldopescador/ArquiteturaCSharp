@@ -40,6 +40,12 @@ namespace Expressao
 
         public Token ProximoToken()
         {
+            // Ignorar espaços em branco
+            while (_posicao < _expressao.Length && char.IsWhiteSpace(_expressao[_posicao]))
+            {
+                _posicao++;
+            }
+
             if (_posicao >= _expressao.Length)
                 return new Token(TokenType.FimExpressao, "");
 
