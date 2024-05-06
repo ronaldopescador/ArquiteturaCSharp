@@ -40,7 +40,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        string expressao = "5+3*2";
+        string expressao = "3 * 2 + 5";
         try
         {
             double resultado = GeradorCodigo.GerarExpressao(expressao);
