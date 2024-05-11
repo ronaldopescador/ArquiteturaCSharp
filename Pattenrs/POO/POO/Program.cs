@@ -22,7 +22,8 @@ class Program
         Calculadora calc = new Calculadora(10, 35);
 
         double resultado = calc.Somar();
-
-        Console.WriteLine("O resultado da soma é: " + resultado);
     }
 }
+
+
+
