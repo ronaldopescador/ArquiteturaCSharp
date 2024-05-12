@@ -54,13 +54,13 @@ class Program
 {
     static void Main(string[] args)
     {
-        ContaCorrente contaCorrente = new ContaCorrente(1000, 50);
-        contaCorrente.Depositar(500);
-        contaCorrente.Sacar(1200);
+        ContaCorrente conta = new ContaCorrente(1000, 50);
+        conta.Depositar(500);
+        conta.Sacar(1200);
 
-        ContaPoupanca contaPoupanca = new ContaPoupanca(2000);
-        contaPoupanca.Depositar(1000);
-        contaPoupanca.CalcularRendimentoMensal();
+        ContaPoupanca poupanca = new ContaPoupanca(2000);
+        poupanca.Depositar(1000);
+        poupanca.CalcularRendimentoMensal();
     }
 }
 
