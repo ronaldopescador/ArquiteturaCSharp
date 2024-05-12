@@ -2,16 +2,16 @@
 class ContaBancaria
 {
     private double saldo;
-    public void Depositar(double valor)
-    {
-        saldo += valor;
-    }
     public void Sacar(double valor)
     {
         if (valor <= saldo)
             saldo -= valor;
         else
             throw new ArgumentException("Saldo insuficiente");
+    }
+    public void Depositar(double valor)
+    {
+        saldo += valor;
     }
     public Double Saldo
     {
