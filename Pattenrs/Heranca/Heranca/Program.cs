@@ -1,7 +1,10 @@
-﻿class ContaBancaria(decimal saldoInicial)
+﻿class ContaBancaria
 {
-    protected decimal _saldo = saldoInicial;
-
+    protected decimal _saldo;
+    public ContaBancaria(decimal saldoInicial)
+    {
+        _saldo = saldoInicial;
+    }
     public virtual void Sacar(decimal valor)
     {
         if (valor <= Saldo)
