@@ -1,21 +1,21 @@
 ﻿using System;
 class ContaBancaria
 {
-    private double saldo;
-    public void Sacar(double valor)
+    private decimal _saldo;
+    public void Sacar(decimal valor)
     {
-        if (valor <= saldo)
-            saldo -= valor;
+        if (valor <= _saldo)
+            _saldo -= valor;
         else
             throw new Exception("Saldo insuficiente");
     }
-    public void Depositar(double valor)
+    public void Depositar(decimal valor)
     {
-        saldo += valor;
+        _saldo += valor;
     }
-    public Double Saldo
+    public decimal Saldo
     {
-        get { return saldo; }
+        get { return _saldo; }
     }
 }
 
