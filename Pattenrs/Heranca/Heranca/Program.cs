@@ -1,12 +1,9 @@
 ﻿using System;
 
-class ContaBancaria
+class ContaBancaria(decimal saldoInicial)
 {
-    protected decimal _saldo;
-    public ContaBancaria(decimal saldoInicial)
-    {
-        _saldo = saldoInicial;
-    }
+    protected decimal _saldo = saldoInicial;
+
     public virtual void Sacar(decimal valor)
     {
         if (valor <= Saldo)
