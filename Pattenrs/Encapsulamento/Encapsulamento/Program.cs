@@ -7,7 +7,7 @@ class ContaBancaria
         if (valor <= saldo)
             saldo -= valor;
         else
-            throw new ArgumentException("Saldo insuficiente");
+            throw new Exception("Saldo insuficiente");
     }
     public void Depositar(double valor)
     {
