@@ -1,6 +1,4 @@
-﻿using System;
-
-class ContaBancaria(decimal saldoInicial)
+﻿class ContaBancaria(decimal saldoInicial)
 {
     protected decimal _saldo = saldoInicial;
 
