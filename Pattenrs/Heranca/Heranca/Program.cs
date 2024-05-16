@@ -12,7 +12,7 @@
         else
             throw new Exception("Saldo insuficiente.");
     }
-    public virtual void Depositar(decimal valor)
+    public void Depositar(decimal valor)
     {
         _saldo += valor;
     }
@@ -21,19 +21,16 @@
         get { return _saldo; }
     }
 }
-
 class ContaCorrente : ContaBancaria
 {
-    public decimal TaxaManutencao { get; private set; }
-
-    public ContaCorrente(decimal saldoInicial, decimal taxaManutencao) : base(saldoInicial)
+    public decimal LimiteCredito { get; private set; }
+    public ContaCorrente(decimal saldoInicial, decimal limiteCredito) : base(saldoInicial)
     {
-        TaxaManutencao = taxaManutencao;
+        LimiteCredito = limiteCredito;
     }
-
     public override void Sacar(decimal valor)
     {
-        if (valor <= Saldo + TaxaManutencao)
+        if (valor <= Saldo + LimiteCredito)
             _saldo -= valor;
         else
             throw new Exception("Saldo insuficiente.");
@@ -42,10 +39,10 @@ class ContaCorrente : ContaBancaria
 
 class ContaPoupanca(decimal saldoInicial) : ContaBancaria(saldoInicial)
 {
-    const decimal TaxaRendimento = 2;
+    const decimal TAXA_RENDIMENTO = 2;
     public void CalcularRendimentoMensal()
     {
-        decimal rendimento = Saldo * TaxaRendimento / 100;
+        decimal rendimento = Saldo * TAXA_RENDIMENTO / 100;
         _saldo += rendimento;
     }
 }
@@ -54,9 +51,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        ContaCorrente conta = new ContaCorrente(1000, 50);
-        conta.Depositar(500);
-        conta.Sacar(1200);
+        ContaCorrente cc = new ContaCorrente(0, 1000);
+        cc.Depositar(500);
+        cc.Sacar(1200);
 
         ContaPoupanca poupanca = new ContaPoupanca(2000);
         poupanca.Depositar(1000);
