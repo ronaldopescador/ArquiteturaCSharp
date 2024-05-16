@@ -10,7 +10,8 @@ namespace Exemplo01_Singleton
     {       
         public void Incluir(int id)
         {
-            Logger.GetInstance().Log($"Pedido {id} incluído");
+            var logger = Logger.GetInstance();
+            logger.Log($"Pedido {id} incluído");
         }
     }
 }
