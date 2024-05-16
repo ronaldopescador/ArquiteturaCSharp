@@ -15,7 +15,7 @@ namespace Exemplo01_Singleton
 
     public class Logger
     {
-        private static Logger instance;
+        private static Logger _instance;
         private static readonly object lockObject = new object();
         private string logFile = "log.txt";
         private Logger()
@@ -24,16 +24,16 @@ namespace Exemplo01_Singleton
         }
         public static Logger GetInstance()
         {
-            if (instance == null)
+            if (_instance == null)
             {
                 lock (lockObject)
                 {
-                    if (instance == null)
-                        instance = new Logger();
+                    if (_instance == null)
+                        _instance = new Logger();
                 }
             }
 
-            return instance;
+            return _instance;
         }
 
         public void Log(LogLevel level, string message)
