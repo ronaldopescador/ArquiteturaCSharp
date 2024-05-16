@@ -32,7 +32,6 @@ namespace Exemplo01_Singleton
                         _instance = new Logger();
                 }
             }
-
             return _instance;
         }
 

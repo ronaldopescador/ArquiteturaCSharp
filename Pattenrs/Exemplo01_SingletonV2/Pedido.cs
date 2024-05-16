@@ -11,7 +11,7 @@ namespace Exemplo01_Singleton
         public void Incluir(int id)
         {
             var logger = Logger.GetInstance();
-            logger.Log($"Pedido {id} incluído");
+            logger.Log(LogLevel.Info, $"Pedido {id} incluído");
         }
     }
 }
