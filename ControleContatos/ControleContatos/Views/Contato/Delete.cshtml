@@ -1,0 +1,15 @@
+﻿@model ControleContatos.Models.Contato
+
+@{
+    ViewData["Title"] = "Excluir contato";
+}
+
+<div class="text-center">
+    <h4 class="display-4">Deseja realmente excluir o contato (@Html.DisplayFor(model => model.Nome))?</h4>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Excluir" class="btn btn-danger" />
+        <a class="btn btn-secondary" asp-action="Index">Voltar</a>
+    </form>
+</div>
